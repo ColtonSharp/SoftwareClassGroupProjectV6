@@ -13,3 +13,6 @@ def MergeAllDataSheets():
     data_concatenated.to_excel(writer,sheet_name='merged',index=False)
     #CLOSE FILE AND SAVE
     writer.save()
+
+
+MergeAllDataSheets()

@@ -51,6 +51,7 @@ def GoogleSearch(userinput):
     # Create a Pandas dataframe from the data.
     df = pd.DataFrame(parse_results(html, keyword))
     path = r'GoogleScrapingSEOKEYFINDER.xlsx'
+    # PATH = r'STARTING_EXCEL_WORKBOOK_NAME.xlsx'   THIS MUST MATH ONE ALL DOCS!!!!!
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine = 'openpyxl')
     writer.book = book
