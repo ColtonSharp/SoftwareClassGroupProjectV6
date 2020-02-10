@@ -55,4 +55,3 @@ def GetCountOfKeyword():
     writer.close()
 
 
-GetCountOfKeyword()
