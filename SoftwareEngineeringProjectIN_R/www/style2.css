@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+
+
+#domainselected > div > div > span.info-box-number{
+	color: green;
+	font-size: 41px;
+}
+
+#domainselected1 > div > div > span.info-box-number{
+	color: green;
+	font-size: 41px;
+}
+
+
+label{
+	color: white;
+}
+
+
+.box.box-solid.box-success{
+	background: black;
+}
+
+.box.box-solid.box-primary{
+	background: black;
+}
+
+.box.box-solid.box-warning{
+	background: black;
+}
+
+.html-widget.gauge svg {
+    height: 160px;
+    margin-top: 25px;
+    margin-bottom: -10px;
+}

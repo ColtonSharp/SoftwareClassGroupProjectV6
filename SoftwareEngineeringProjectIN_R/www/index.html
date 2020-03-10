@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="application/shiny-singletons"></script>
+  <script type="application/html-dependencies">json2[2014.02.04];jquery[1.12.4];shiny[1.0.5];htmlwidgets[0.9];plotly-binding[4.7.1];datatables[1.10.5];datatables-bootstrap[1.10.5];bootstrap[3.3.7]</script>
+<script src="shared/json2-min.js"></script>
+<script src="shared/jquery.min.js"></script>
+<link href="shared/shiny.css" rel="stylesheet" />
+<script src="shared/shiny.min.js"></script>
+<script src="htmlwidgets-0.9/htmlwidgets.js"></script>
+<script src="plotly-binding-4.7.1/plotly.js"></script>
+<script src="shared/datatables/js/jquery.dataTables.min.js"></script>
+<link href="shared/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+<link href="shared/datatables/css/dataTables.extra.css" rel="stylesheet" />
+<script src="shared/datatables/js/dataTables.bootstrap.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="shared/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<script src="shared/bootstrap/js/bootstrap.min.js"></script>
+<script src="shared/bootstrap/shim/html5shiv.min.js"></script>
+<script src="shared/bootstrap/shim/respond.min.js"></script>  <title>Capstone Project: Working Title</title>
+  <title>Capstone123456</title>
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    <style type="text/css">@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+h1 {
+  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  font-weight: 500;
+  line-height: 1.1;
+  color: #ad1d28;
+}
+
+body {
+  background-color: #fff;
+}
+
+title{
+	color: red;
+}
+
+.navbar-brand{
+	color: red;
+}</style>
+    <h2>Capstone Project: Working Title</h2>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <span class="navbar-brand">Capstone</span>
+        </div>
+        <ul class="nav navbar-nav shiny-tab-input" id="navBar" data-tabsetid="2487">
+          <li class="active">
+            <a href="#tab-2487-1" data-toggle="tab" data-value="home">Home</a>
+          </li>
+          <li>
+            <a href="#tab-2487-2" data-toggle="tab" data-value="Mortgage Debt Outstanding">Mortgage Debt Outstanding</a>
+          </li>
+          <li>
+            <a href="#tab-2487-3" data-toggle="tab" data-value="Loans by Type">Loans by Type</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="tab-content" data-tabsetid="2487">
+        <div class="tab-pane active" data-value="home" id="tab-2487-1">
+          <div class="row">
+            <div class="col-sm-4">
+              <form class="well" id="sidebar" style="position: fixed; width:25%;">
+                <a href="#intro">Introduction</a>
+                <br/>
+                <a href="#features">Features</a>
+              </form>
+            </div>
+            <div class="col-sm-8">
+              <section id="intro">
+                <h1>Introduction</h1>
+                <p>In an effort to avoid experiencing another financial crisis, the development of a system that will serve to assist the recognition of 
+                                conditions that may lead to financial troubles indicated by certain factors that this capstone group has 
+                                deemed significant by statistical data represented in the project models in the application. This application 
+                                will alert the financial sectors of the government and private enterprises of the financial market. 
+                                This capstone group will allow the financial sectors a three month alert time to self correct for potential
+                                increases and decreases in the relevant markets that lead to mortgage defaultment. </p>
+              </section>
+              <br/>
+              <section id="features">
+                <h2>Features</h2>
+                <p>The primary feature of the application will alert the financial sectors of the government and private enterprises of the financial market. 
+                            This capstone group will allow the financial sectors a three month alert time to self correct for potential increases 
+                            and decreases in the relevant markets that lead to mortgage defaultment. This three month alert time will allow relevant 
+                            financial sectors or mortgage investors to self correct based on prime interest rate changes, the Dow Jones opening and
+                            closing daily averages, credit card debt outstanding, auto loan debt outstanding, and student loan debt outstanding. 
+                            These prime indicators are the driving forces of mortgage loans defaultment and inability to pay back loans regardless 
+                            of loan classification.    </p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Mortgage Debt Outstanding" id="tab-2487-2">
+          <div class="row">
+            <div class="col-sm-4">
+              <form class="well" id="sidebar">
+                <span class="help-block">Create a graph that shows mortgage debt outstanding for the United States</span>
+                <div id="debtOutstandingRadio" class="form-group shiny-input-radiogroup shiny-input-container">
+                  <label class="control-label" for="debtOutstandingRadio">
+                    <h3>Choose your graph</h3>
+                  </label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="debtOutstandingRadio" value="debtRadio" checked="checked"/>
+                        <span>Normal</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="debtOutstandingRadio" value="lmDebtRadio"/>
+                        <span>Linear Model</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="debtOutstandingRadio" value="forecastDebtRadio"/>
+                        <span>Forecast</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-8">
+              <div class="tabbable">
+                <ul class="nav nav-tabs" data-tabsetid="6701">
+                  <li class="active">
+                    <a href="#tab-6701-1" data-toggle="tab" data-value="Plot">Plot</a>
+                  </li>
+                  <li>
+                    <a href="#tab-6701-2" data-toggle="tab" data-value="Summary">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#tab-6701-3" data-toggle="tab" data-value="Table">Table</a>
+                  </li>
+                </ul>
+                <div class="tab-content" data-tabsetid="6701">
+                  <div class="tab-pane active" data-value="Plot" id="tab-6701-1">
+                    <div id="debtOutstandingPlot" style="width:750px; height:400px; " class="plotly html-widget html-widget-output"></div>
+                  </div>
+                  <div class="tab-pane" data-value="Summary" id="tab-6701-2">
+                    <h1>What Does This Data Mean?</h1>
+                    <p>Mortgage debt outstanding represents the national debt that consumers hold 
+                                      regarding a single family housing mortgage. Data has been represented by quarters due to the Federal 
+                                      Reserve Economic Data, being accredited only by end of period financial and economical data. 
+                                      FRED is nationally accredited for accurate and regulated information due to this accreditation this capstone 
+                                      group relies on the integrity of the data represented by FRED. Mortgage debt outstanding has a regression line 
+                                      noted in the sidebar radio button “Linear Model” that represents an  approximated eight percent increase by quarter 
+                                      with a two percent margin of error. The margin of error increases to three percent margin of error for first and 
+                                      last three years. Mortgage debt outstanding has a forecasting model represented in the sidebar radio button 
+                                      “Forecast” that represents a two year forecast incremented by quarters which shows this capstone group that 
+                                      the mortgage debt outstanding will potentially reach an all time high by  2020 of approximately twelve million 
+                                      dollars mortgage debt outstanding.   
+                                      </p>
+                  </div>
+                  <div class="tab-pane" data-value="Table" id="tab-6701-3">
+                    <div id="debtOutstandingTable" class="shiny-datatable-output"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" data-value="Loans by Type" id="tab-2487-3">
+          <div class="row">
+            <div class="col-sm-4">
+              <form class="well" id="sidebar">sidebar panel</form>
+            </div>
+            <div class="col-sm-8">
+              <div class="tabbable">
+                <ul class="nav nav-tabs" data-tabsetid="1026">
+                  <li class="active">
+                    <a href="#tab-1026-1" data-toggle="tab" data-value="Plot">Plot</a>
+                  </li>
+                  <li>
+                    <a href="#tab-1026-2" data-toggle="tab" data-value="Summary">Summary</a>
+                  </li>
+                  <li>
+                    <a href="#tab-1026-3" data-toggle="tab" data-value="Table">Table</a>
+                  </li>
+                </ul>
+                <div class="tab-content" data-tabsetid="1026">
+                  <div class="tab-pane active" data-value="Plot" id="tab-1026-1">
+                    <div id="loansByTypePlot" style="width:950px; height:400px; " class="plotly html-widget html-widget-output"></div>
+                  </div>
+                  <div class="tab-pane" data-value="Summary" id="tab-1026-2">
+                    <h1>What does this data mean?</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean lobortis, ligula eget posuere porttitor, 
+                                     massa urna consectetur libero, id rhoncus orci ante id leo. Aliquam erat volutpat. 
+                                     Ut viverra interdum accumsan. Phasellus congue tortor nec nisi tristique, a laoreet nisl imperdiet. 
+                                     Phasellus a augue nec purus vulputate finibus nec eu risus. Aenean non tempor urna. 
+                                     Integer feugiat mi vitae condimentum mattis. Vivamus ac ligula porta, tincidunt neque vitae, 
+                                     pharetra magna. Morbi tristique accumsan lacus, vel lacinia mauris condimentum nec.</p>
+                  </div>
+                  <div class="tab-pane" data-value="Table" id="tab-1026-3">
+                    <div id="loansByTypeTable" class="shiny-datatable-output"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+

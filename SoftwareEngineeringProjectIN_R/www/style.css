@@ -1,0 +1,120 @@
+@import url("//fonts.googleapis.com/css?family=Lobster|Cabin:400,700");
+
+
+
+
+
+body {
+  background-color: #8896A0;
+	color: white;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	
+
+}
+        
+h1,h3 {
+  font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  font-weight: 500;
+	font-size: 30pt;
+  line-height: 1.1;
+  color: #022245;
+}
+
+h2{
+	color: white;
+	font-family: Gotham, 'Helvetica Neue', Helvetica, Arial, 'sans-serif';
+  	font-weight: 500;
+	font-size: 40pt;
+  	line-height: 1.1;
+	padding-left: .75%;
+}
+.modal-content{
+	color:black;
+}
+
+p{
+	text-align: justify;
+}
+.alert-warning, .bg-yellow, .callout.callout-warning, .label-warning, .modal-warning .modal-body {
+    background-color: #f39c12!important;
+    width: 250px!important;
+}
+
+#sidebar1{
+      max-height: calc(70vh - 9rem);
+      overflow-y: auto;
+ }
+.well{
+	margin-top: 2%;
+	background-color: #0D3D70;
+	color:white;
+}
+.well h3{
+	color:#5081B5 !important;
+	line-height: 1.1;
+}
+.well span{
+	color:#BBBABA !important;
+	line-height: 1.1;
+}
+.well > a{
+	text-decoration: none;
+	color: white;
+}
+
+/*color text of odd rows in table tab*/
+.odd,.even{
+	color: black;
+}
+.control-label > h3{
+	color: white;
+}
+
+
+.nav.nav-tabs{
+	margin-bottom: 20px;
+	color: white !important;
+}
+/*.active li{
+	color: white !important;
+	background-color: #81A4C9;
+	border: solid;
+	border-width: thin;
+	border-color: #81A4C9;
+	border-radius: 5%;
+}*/
+
+
+.box-header > .box-title {
+/*    background-color: lightgrey !important;*/
+	text-align: center !important;
+	color: #022245;
+}
+
+.col-sm-12 > .box{
+	border: solid;
+	border-width: thick;
+	border-color: #7696B8;
+	margin-bottom: 2%;
+	border-radius: 5%;
+	background-color: white;
+}
+.svg-container{
+	border: solid;
+	border-width: thick;
+	border-color: #7696B8;
+}
+
+.row{
+	margin-bottom: 2%;
+}
+.box img{
+	padding: 0px 0px 20px 0px;
+	align-items: center;
+  justify-content: center;
+}
+.box #show{
+	color: black;
+	align-items: center;
+  justify-content: center;
+}
