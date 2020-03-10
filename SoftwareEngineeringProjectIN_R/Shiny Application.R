@@ -13,7 +13,7 @@ library(DT)
 
 # Connect to the database and retrieve data
 source(file.path("data", "LoadDataBase.r"),  local = TRUE)$value
-
+source(file.path("data", "DataVisv1_2.r"),  local = TRUE)$value
 source(file.path("server", "MasterServerFunction.r"),  local = TRUE)$value
 # Connect to the PLOT and retrieve data
 
@@ -161,8 +161,8 @@ ui <- dashboardPage(skin = "green",
     
     sidebarMenu(
     menuItem("Dashboard", tabName = "dashboard", icon = icon("dashboard")),
-    menuItem("Results", tabName = "Results", icon = icon("th")),
-    menuItem("About Us", tabName = "AboutUs", icon = icon("th"))
+    menuItem("Results", tabName = "Results", icon = icon("th"))
+   
 
   )),
   ## Body content
@@ -308,10 +308,10 @@ ui <- dashboardPage(skin = "green",
                       h1("Software Engineering Class CDIM 6330-70"),
                       h2("Search Engine Ompitmization Tool"),
                       h4("Colton Sharp"),
-                      h4("Input Name Here"),
-                      h4("Input Name Here"),
-                      h4("Input Name Here"),
-                      h4("Input Name Here")
+                      h4("Nirmala Narasimhan"),
+                      h4("Elizabeth Swearingen"),
+                      h4("Nicholas Aguilera"),
+                      h4("Huong Thang")
                   ),
                   box(width=4, height=300,tags$img(src="https://images.pexels.com/photos/267415/pexels-photo-267415.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", height="100%", width="100%") ),
                   
@@ -322,14 +322,8 @@ ui <- dashboardPage(skin = "green",
                       p("Main Graphs - has three graphs that contain all the information found by google and “Main Graphs” includes all data found. "),
                       h1("Competitors To Look At"),
                       p("Competitors To Look At - has everything that “Main Graphs” does; however it only has data that is directly competing with the selected domain. If you do not find the selected domain within these graphs or the included data table. The selected domain does not meet standards for top competitors and you should reference back to “SEO Competition Statistics” and “Main Graphs” to look for the reasons why.")
-                      ),
-                  box(width = 12,title="Files Needed",status = "warning", solidHeader = TRUE,
-                      textInput("keyword", "Keyword File Path:"),
-                      textInput("blankfile", "Blank File Path:"),
-                      textInput("masterfile", "Database File Path:"),
-                      textInput("pivotfile", "Pivot Table File Path:"),
-                      textInput("domain", "Domain Used By Goole i.e www.example.com:"),
-                      actionButton("submit", "Submit File Paths"))
+                      )
+                 
               )
               
               )
