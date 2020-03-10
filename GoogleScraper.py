@@ -5,7 +5,7 @@ from openpyxl import load_workbook
 from datetime import datetime
 #YOU MUST HAVE REQUESTS,BS4,PANDAS,OPENPYXL,AND DATETIME TO CONTINUE DO NOT RUN WITHOUT INSTALLATION
 # DEF GOOGLESEARCH(USERINPUT) IS THE MAIN CLASS THAT SCRAPES GOOGLE FOR THE SEARCH RESULTS
-def GoogleSearch(userinput):
+def GoogleSearch(userinput,blankfile):
     UserInputKeyword = userinput
     USER_AGENT = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'}
@@ -50,7 +50,7 @@ def GoogleSearch(userinput):
 
     # Create a Pandas dataframe from the data.
     df = pd.DataFrame(parse_results(html, keyword))
-    path = r'GoogleScrapingSEOKEYFINDER.xlsx'
+    path = blankfile
     # PATH = r'STARTING_EXCEL_WORKBOOK_NAME.xlsx'   THIS MUST MATH ONE ALL DOCS!!!!!
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine = 'openpyxl')

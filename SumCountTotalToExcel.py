@@ -1,8 +1,8 @@
 import pandas as pd
 from openpyxl import load_workbook
-def Add_Count():
+def Add_Count(masterfile):
 
-    df = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='Merged_With_Count_Cleaned_Data')
+    df = pd.read_excel(masterfile, sheet_name='Merged_With_Count_Cleaned_Data')
     count_total = []
     column_leng = df.columns
     column_leng = len(column_leng)
@@ -13,7 +13,7 @@ def Add_Count():
     print(count_total)
 
 
-    path = r'SoftwareEngineeringMasterDataBase.xlsx'
+    path = masterfile
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine='openpyxl')
     writer.book = book

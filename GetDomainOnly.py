@@ -1,8 +1,8 @@
 import pandas as pd
 from openpyxl import load_workbook
 
-def DomainAdd():
-    df = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='Add_Sum_Col')
+def DomainAdd(masterfile):
+    df = pd.read_excel(masterfile, sheet_name='Add_Sum_Col')
     DomainArray = []
     column_leng = df.columns
     column_leng = len(column_leng)
@@ -38,7 +38,7 @@ def DomainAdd():
 
 
 
-    path = r'SoftwareEngineeringMasterDataBase.xlsx'
+    path = masterfile
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine='openpyxl')
     writer.book = book

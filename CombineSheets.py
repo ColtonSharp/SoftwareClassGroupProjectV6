@@ -1,8 +1,8 @@
 import pandas as pd
 # YOU MUST IMPORT PANDAS AND HAVE PANDAS INSTALLED CORRECTLY BEFORE THIS FUNCTION WILL WORK
-def MergeAllDataSheets():
-    input_file = 'GoogleScrapingSEOKEYFINDER.xlsx'  #WHAT SHEET HAS ALL THE DIFFERENT TABS IN IT
-    output_file = 'SoftwareEngineeringMasterDataBase.xlsx' #WHAT SHEET DO YOU WANT IT TO MAKE WHEN MERGED
+def MergeAllDataSheets(blankfile,masterfile):
+    input_file = blankfile  #WHAT SHEET HAS ALL THE DIFFERENT TABS IN IT
+    output_file = masterfile #WHAT SHEET DO YOU WANT IT TO MAKE WHEN MERGED
     df = pd.read_excel(input_file, None) #READ ALL SHEETS THATS WHY YOU PUT 'NONE'
     all_df = []
     for key in df.keys():
@@ -15,4 +15,3 @@ def MergeAllDataSheets():
     writer.save()
 
 
-MergeAllDataSheets()

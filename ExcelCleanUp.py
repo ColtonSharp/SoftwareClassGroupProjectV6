@@ -4,9 +4,9 @@ from openpyxl import load_workbook
 
 
 
-def Data_Clean_Up():
+def Data_Clean_Up(masterfile):
     #print(df.columns)
-    df = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='Merged_With_Count')
+    df = pd.read_excel(masterfile, sheet_name='Merged_With_Count')
     column_leng = df.columns
     column_leng = len(column_leng)
     print(column_leng)
@@ -38,7 +38,7 @@ def Data_Clean_Up():
 
 
 
-    path = r'SoftwareEngineeringMasterDataBase.xlsx'
+    path = masterfile
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine='openpyxl')
     writer.book = book

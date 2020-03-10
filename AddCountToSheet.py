@@ -3,11 +3,11 @@ from openpyxl import load_workbook
 
 
 
-def add_count_of():
-    df1 = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='merged')
-    df2 = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='merged_link')
-    df3 = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='merged_desc')
-    df4 = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='merged_title')
+def add_count_of(masterfile):
+    df1 = pd.read_excel(masterfile, sheet_name='merged')
+    df2 = pd.read_excel(masterfile, sheet_name='merged_link')
+    df3 = pd.read_excel(masterfile, sheet_name='merged_desc')
+    df4 = pd.read_excel(masterfile, sheet_name='merged_title')
     # displying  dataframe - Output 1
     #print(df1.columns)
     #print(df2.columns)
@@ -44,7 +44,7 @@ def add_count_of():
 
 
 
-    path = r'SoftwareEngineeringMasterDataBase.xlsx'
+    path = masterfile
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine='openpyxl')
     writer.book = book

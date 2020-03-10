@@ -1,8 +1,8 @@
 import pandas as pd
 from openpyxl import load_workbook
 import socket
-def Ip_Add():
-    df = pd.read_excel('SoftwareEngineeringMasterDataBase.xlsx', sheet_name='Add_Domain_Col')
+def Ip_Add(masterfile):
+    df = pd.read_excel(masterfile, sheet_name='Add_Domain_Col')
 
     ip_listing = []
     for i in df.index:
@@ -15,7 +15,7 @@ def Ip_Add():
 
     df2 = df.assign(Ip_Address=ip_listing)
 
-    path = r'SoftwareEngineeringMasterDataBase.xlsx'
+    path = masterfile
     book = load_workbook(path)
     writer = pd.ExcelWriter(path, engine='openpyxl')
     writer.book = book
